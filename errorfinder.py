@@ -21,42 +21,46 @@ frequency = 5.0
 model = spyro.tools.create_model_for_grid_point_calculation(frequency,1,method,minimum_mesh_velocity,experiment_type=experiment_type)
 comm = spyro.utils.mpi_init(model)
 
-## Calculating reference solution with p=5 and g=15:
+## Calculating reference solution with p=5 and g=15 sigma = 500:
 degree = p_reference
 model = spyro.tools.create_model_for_grid_point_calculation(frequency, degree, method, minimum_mesh_velocity, experiment_type = experiment_type, receiver_type = 'near')
+model['testing_parameters']['source_sigma'] = 500.0
 print('Calculating reference solution of G = '+str(G_reference)+' and p = '+str(p_reference), flush = True)
 p_exact = spyro.tools.wave_solver(model, G =G_reference, comm = comm)
 comm.comm.barrier()
 
-## Calculating P=2G=12
-degree = 2
-G = 12
-print('\nFor p of '+str(degree), flush = True)
-
-model = spyro.tools.create_model_for_grid_point_calculation(frequency, degree, method, minimum_mesh_velocity, experiment_type = experiment_type, receiver_type = 'near')
-print('G of '+str(G), flush = True)
-p2 = spyro.tools.wave_solver(model, G =G, comm = comm)
-error = spyro.tools.error_calc(p_exact, p2, model, comm = comm)
-print('With P of '+ str(degree) +' and G of '+str(G)+' Error = '+str(error), flush = True)
-
-## Calculating P=3G=12
+## Calculating P=2 G=12 sig = 500
 degree = 3
 G = 12
 print('\nFor p of '+str(degree), flush = True)
 
 model = spyro.tools.create_model_for_grid_point_calculation(frequency, degree, method, minimum_mesh_velocity, experiment_type = experiment_type, receiver_type = 'near')
+model['testing_parameters']['source_sigma'] = 500.0
+print('G of '+str(G), flush = True)
+p2 = spyro.tools.wave_solver(model, G =G, comm = comm)
+error = spyro.tools.error_calc(p_exact, p2, model, comm = comm)
+print('With P of '+ str(degree) +' and G of '+str(G)+' Error = '+str(error), flush = True)
+
+## Calculating P=2 G=12 sig 1000
+degree = 3
+G = 12
+print('\nFor p of '+str(degree), flush = True)
+
+model = spyro.tools.create_model_for_grid_point_calculation(frequency, degree, method, minimum_mesh_velocity, experiment_type = experiment_type, receiver_type = 'near')
+model['testing_parameters']['source_sigma'] = 1000.0
 print('G of '+str(G), flush = True)
 p3 = spyro.tools.wave_solver(model, G =G, comm = comm)
 error = spyro.tools.error_calc(p_exact, p3, model, comm = comm)
 print('With P of '+ str(degree) +' and G of '+str(G)+' Error = '+str(error), flush = True)
 
 
-## Calculating P=4G=12
-degree = 4
+## Calculating P=2 G=12 sig = 2000
+degree = 3
 G = 12
 print('\nFor p of '+str(degree), flush = True)
 
 model = spyro.tools.create_model_for_grid_point_calculation(frequency, degree, method, minimum_mesh_velocity, experiment_type = experiment_type, receiver_type = 'near')
+model['testing_parameters']['source_sigma'] = 2000.0
 print('G of '+str(G), flush = True)
 p4 = spyro.tools.wave_solver(model, G =G, comm = comm)
 error = spyro.tools.error_calc(p_exact, p4, model, comm = comm)

@@ -92,7 +92,8 @@ def create_model_for_grid_point_calculation(frequency, degree, method, minimum_m
         'experiment_type': 'homogeneous',
         'minimum_mesh_velocity': minimum_mesh_velocity,
         'pml_fraction': pml_fraction,
-        'receiver_type': receiver_type
+        'receiver_type': receiver_type,
+        'source_sigma': 500.0
     }
 
     return model

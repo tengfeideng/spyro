@@ -34,6 +34,7 @@ class Sources:
         self.num_sources = model["acquisition"]["num_sources"]
         self.pos = model["acquisition"]["source_pos"]
         self.dimension = model["opts"]["dimension"]
+        self.sigma_x = model['testing_parameters']['source_sigma']
         self.mesh = mesh
         self.V = V
         self.my_ensemble = comm
@@ -68,7 +69,7 @@ class Sources:
         if self.dimension == 2:
             source = Constant([0, 0])
             if self.source_type == "Ricker":
-                delta = Interpolator(delta_expr(source, z, x), V)
+                delta = Interpolator(delta_expr(source, z, x, sigma_x=self.sigma_x), V)
             elif self.source_type == "MMS":
                 delta = Interpolator(MMS_space(source, z, x), V)
             else:

@@ -1,27 +1,23 @@
 from firedrake import *
-from firedrake.assemble import create_assembly_callable
 
-from .. import utils
 from ..domains import quadrature, space
 from ..pml import damping
-from ..sources import FullRickerWavelet
+from ..sources import full_ricker_wavelet, delta_expr
 from . import helpers
 
-set_log_level(ERROR)
 
-
-def Leapfrog(
+def forward_AD(
     model,
     mesh,
     comm,
     c,
     excitations,
-    receivers,
+    rec_position,
     source_num=0,
     freq_index=0,
     output=False,
 ):
-    """Secord-order in time fully-explicit Leapfrog scheme
+    """Secord-order in time fully-explicit scheme
     with implementation of a Perfectly Matched Layer (PML) using
     CG FEM with or without higher order mass lumping (KMV type elements).
 
@@ -38,7 +34,7 @@ def Leapfrog(
     excitations: A list Firedrake.Functions
         Each function contains an interpolated space function
         emulated a Dirac delta at the location of source `source_num`
-    receivers: A :class:`Spyro.Receivers` object.
+    receivers: A :class:`spyro.Receivers` object.
         Contains the receiver locations and sparse interpolation methods.
     source_num: `int`, optional
         The source number you wish to simulate
@@ -95,8 +91,16 @@ def Leapfrog(
 
     if method == "KMV":
         params = {"ksp_type": "preonly", "pc_type": "jacobi"}
-    elif method == "CG":
+    elif (
+        method == "CG"
+        and mesh.ufl_cell() != quadrilateral
+        and mesh.ufl_cell() != hexahedron
+    ):
         params = {"ksp_type": "cg", "pc_type": "jacobi"}
+    elif method == "CG" and (
+        mesh.ufl_cell() == quadrilateral or mesh.ufl_cell() == hexahedron
+    ):
+        params = {"ksp_type": "preonly", "pc_type": "jacobi"}
     else:
         raise ValueError("method is not yet supported")
 
@@ -175,19 +179,13 @@ def Leapfrog(
         u_n = Function(V)
         u_np1 = Function(V)
 
-    is_local = helpers.receivers_local(mesh, dim, receivers.receiver_locations)
 
-    outfile = helpers.create_output_file("Leapfrog.pvd", comm, source_num)
+    outfile = helpers.create_output_file("Forward.pvd", comm, source_num)
 
     t = 0.0
 
     cutoff = freq_bands[freq_index] if "inversion" in model else None
-    RW = FullRickerWavelet(dt, tf, freq, amp=amp, cutoff=cutoff)
 
-    excitation = excitations[source_num]
-    ricker = Constant(0)
-    f = excitation * ricker
-    ricker.assign(RW[0])
     # -------------------------------------------------------
     m1 = ((u - 2.0 * u_n + u_nm1) / Constant(dt ** 2)) * v * dx(rule=qr_x)
     a = c * c * dot(grad(u_n), grad(v)) * dx(rule=qr_x)  # explicit
@@ -196,12 +194,15 @@ def Leapfrog(
         nf = c * ((u_n - u_nm1) / dt) * v * ds(rule=qr_s)
     else:
         nf = 0
+    RW = full_ricker_wavelet(dt, tf, freq, amp=amp, cutoff=None)
 
-    FF = m1 + a + nf - f * v * dx(rule=qr_x)
+    f, ricker = external_forcing(RW, mesh, model, source_num, V)
+    # FF = m1 + a + nf
+    FF = m1 + a + nf - c * c * f * v * dx(rule=qr_x)
 
     if PML:
         X = Function(W)
-        B = Function(W)
+        # B = Function(W)
 
         if dim == 2:
             pml2 = sigma_x * sigma_z * u_n * v * dx(rule=qr_x)
@@ -234,8 +235,6 @@ def Leapfrog(
             mm2 = inner(dot(Gamma_1, pp_n), qq) * dx(rule=qr_x)
             dd1 = c * c * inner(grad(u_n), dot(Gamma_2, qq)) * dx(rule=qr_x)
             dd2 = -c * c * inner(grad(psi_n), dot(Gamma_3, qq)) * dx(rule=qr_x)
-            # dd1 = 1 * inner(grad(u_n), dot(Gamma_2, qq)) * dx(rule=qr_x)
-            # dd2 = -1 * inner(grad(psi_n), dot(Gamma_3, qq)) * dx(rule=qr_x)
 
             FF += mm1 + mm2 + dd1 + dd2
             # -------------------------------------------------------
@@ -245,20 +244,25 @@ def Leapfrog(
             FF += mmm1 + uuu1
     else:
         X = Function(V)
-        B = Function(V)
+        # B = Function(V)
 
     lhs_ = lhs(FF)
     rhs_ = rhs(FF)
 
-    A = assemble(lhs_, mat_type="matfree")
-    solver = LinearSolver(A, solver_parameters=params)
+    # A = assemble(lhs_, mat_type="matfree")
+    # solver = LinearSolver(A, solver_parameters=params)
 
-    usol = [Function(V, name="pressure") for t in range(nt) if t % fspool == 0]
     usol_recv = []
     saveIT = 0
 
-    assembly_callable = create_assembly_callable(rhs_, tensor=B)
+    # assembly_callable = create_assembly_callable(rhs_, tensor=B)
+    problem = LinearVariationalProblem(lhs_, rhs_, X)
+    solver = LinearVariationalSolver(problem, solver_parameters=params)
 
+    rhs_forcing = Function(V)
+    point_cloud = VertexOnlyMesh(mesh, rec_position)
+    P = FunctionSpace(point_cloud, "DG", 0)
+    obj_func = 0
     for IT in range(nt):
 
         if IT < dstep:
@@ -266,11 +270,7 @@ def Leapfrog(
         elif IT == dstep:
             ricker.assign(0.0)
 
-        # AX=B --> solve for X = B/Aˆ-1
-        # B = assemble(rhs_, tensor=B)
-        assembly_callable()
-
-        solver.solve(X, B)
+        solver.solve()
         if PML:
             if dim == 2:
                 u_np1, pp_np1 = X.split()
@@ -285,28 +285,26 @@ def Leapfrog(
         else:
             u_np1.assign(X)
 
-        u_nm1.assign(u_n)
-        u_n.assign(u_np1)
+        rec = interpolate(u_np1, P)
+        usol_recv.append(rec.dat.data)
 
-        
-        usol_recv.append(receivers.interpolate(u_n.dat.data_ro_with_halos[:], is_local))
-
-        if IT % fspool == 0:
-            usol[saveIT].assign(u_n)
-            saveIT += 1
+        obj_func += assemble(dt * 0.25 * inner(rec, rec) * dx)
 
         if IT % nspool == 0:
             assert (
-                 norm(u_n) < 1
+                norm(u_n) < 1
             ), "Numerical instability. Try reducing dt or building the mesh differently"
             if output:
                 outfile.write(u_n, time=t, name="Pressure")
             helpers.display_progress(comm, t)
 
+        u_nm1.assign(u_n)
+        u_n.assign(u_np1)
+
         t = IT * float(dt)
 
-    usol_recv = helpers.fill(usol_recv, is_local, nt, receivers.num_receivers)
-    usol_recv = utils.communicate(usol_recv, comm)
+    # usol_recv = helpers.fill(usol_recv, is_local, nt, len(rec_position))
+    # usol_recv = utils.communicate(usol_recv, comm)
 
     if comm.ensemble_comm.rank == 0 and comm.comm.rank == 0:
         print(
@@ -314,4 +312,25 @@ def Leapfrog(
             flush=True,
         )
 
-    return usol, usol_recv
+    return obj_func, usol_recv
+
+
+# ----------------------------------------#
+# external forcing
+def external_forcing(RW, mesh, model, source_num, V):
+
+    pos = model["acquisition"]["source_pos"]
+    z, x = SpatialCoordinate(mesh)
+    sigma_x = Constant(2000)
+    source = Constant(pos[source_num])
+    delta = Interpolator(delta_expr(source, z, x, sigma_x), V)
+    excitation = Function(delta.interpolate())
+
+    ricker = Constant(0)
+    f = excitation * ricker
+    ricker.assign(RW[0], annotate=True)
+
+    return f, ricker
+
+
+# ----------------------------------------#

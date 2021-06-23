@@ -349,7 +349,11 @@ class Receivers:
         return cell_tabulations
 
     def __func_build_cell_tabulations_2D_quad(self):
-        element = choosing_element(self.space, self.degree)
+        finatelement = FiniteElement('CG', self.mesh.ufl_cell(), degree=self.degree, variant='spectral')
+        V = FunctionSpace(self.mesh, finatelement)
+        u = TrialFunction(V)
+        Q=u.function_space()
+        element = Q.finat_element.fiat_equivalent
 
         cell_tabulations = np.zeros((self.num_receivers, self.nodes_per_cell))
 
@@ -373,7 +377,11 @@ class Receivers:
         return cell_tabulations
     
     def __func_build_cell_tabulations_3D_hex(self):
-        element = choosing_element(self.space, self.degree)
+        finatelement = FiniteElement('CG', self.mesh.ufl_cell(), degree=self.degree, variant='spectral')
+        V = FunctionSpace(self.mesh, finatelement)
+        u = TrialFunction(V)
+        Q=u.function_space()
+        element = Q.finat_element.fiat_equivalent
 
         cell_tabulations = np.zeros((self.num_receivers, self.nodes_per_cell))
 
@@ -405,7 +413,7 @@ def choosing_element(V, degree):
     cell_geometry = V.mesh().ufl_cell()
     if cell_geometry == quadrilateral:
         T = UFCQuadrilateral()
-        #raise ValueError("Point interpolation not yet implemented for quads")
+        raise ValueError("Point interpolation for quads implemented somewhere else.")
 
     elif cell_geometry == triangle:
         T = UFCTriangle()
@@ -422,8 +430,6 @@ def choosing_element(V, degree):
         element = CG(T, degree)
     elif V.ufl_element().family() == "Discontinuous Lagrange":
         element = DG(T, degree)
-    elif V.ufl_element().family() == "Q":
-        element = CG(T, degree)
     else:
         raise ValueError("Function space not yet supported.")
 
@@ -730,3 +736,11 @@ def change_to_reference_tetrahedron(p, a, b, c, d):
     pnz = px * a31 + py * a32 + pz * a33 + a34
 
     return (pnx, pny, pnz)
+
+def change_to_reference_quad(p, a, b, c, d):
+
+    return False
+
+def change_to_reference_hexahedron(p, a, b, c, d, e, f):
+
+    return False

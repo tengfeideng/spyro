@@ -365,7 +365,7 @@ class Receivers:
             cell_id = self.is_local[receiver_id]
             if cell_id is not None:
                 # getting coordinates to change to reference element
-                p = self.receiver_locations[receiver_id]
+                p  = self.receiver_locations[receiver_id]
                 v0 = self.cellVertices[receiver_id][0]
                 v1 = self.cellVertices[receiver_id][1]
                 v2 = self.cellVertices[receiver_id][2]

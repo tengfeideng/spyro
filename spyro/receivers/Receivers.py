@@ -295,10 +295,14 @@ class Receivers:
         return node_locations
 
     def __func_build_cell_tabulations(self):
-        if self.dimension == 2:
+        if self.dimension == 2   and self.quadrilateral == False:
             return self.__func_build_cell_tabulations_2D()
-        elif self.dimension == 3:
+        elif self.dimension == 3 and self.quadrilateral == False:
             return self.__func_build_cell_tabulations_3D()
+        elif self.dimension == 2 and self.quadrilateral == True:
+            return self.__func_build_cell_tabulations_2D_quad()
+        elif self.dimension == 3 and self.quadrilateral == True:
+            return self.__func_build_cell_tabulations_3D_hex()
         else:
             raise ValueError
 
@@ -777,7 +781,7 @@ def change_to_reference_quad(p, v0, v1, v2, v3):
     pny = coefs[1,0]*px +coefs[1,1]*py +coefs[1,2]
 
 
-    return (pnx, pny))
+    return (pnx, pny)
 
 def change_to_reference_hexahedron(p, a, b, c, d, e, f):
 

@@ -737,9 +737,47 @@ def change_to_reference_tetrahedron(p, a, b, c, d):
 
     return (pnx, pny, pnz)
 
-def change_to_reference_quad(p, a, b, c, d):
+def change_to_reference_quad(p, v0, v1, v2, v3):
+    (px, py) = p
+    # Irregular quad
+    (x0, y0) = v0
+    (x1, y1) = v1
+    (x2, y2) = v2
+    (x3, y3) = v3
 
-    return False
+    # Reference quad
+    xn0 = 0.0
+    yn0 = 0.0
+    xn1 = 1.0
+    yn1 = 0.0
+    xn2 = 1.0
+    yn2 = 1.0
+    xn3 = 0.0
+    yn3 = 1.0
+
+    mat1 = np.array([[x0,y0, 1, 0, 0, 0,-x0*xn0,-y0*xn0],
+                     [ 0, 0, 0,x0,y0, 1,-x0*yn0,-y0*yn0],
+                     [x1,y1, 1, 0, 0, 0,-x1*xn1,-y1*xn1],
+                     [ 0, 0, 0,x1,y1, 1,-x1*yn1,-y1*yn1],
+                     [x2,y2, 1, 0, 0, 0,-x2*xn2,-y2*xn2],
+                     [ 0, 0, 0,x2,y2, 1,-x2*yn2,-y2*yn2],
+                     [x3,y3, 1, 0, 0, 0,-x3*xn3,-y3*xn3],
+                     [ 0, 0, 0,x3,y3, 1,-x3*yn3,-y3*yn3]])
+    mat2 = np.array([[xn0],
+                     [yn0],
+                     [xn1],
+                     [yn1],
+                     [xn2],
+                     [yn2],
+                     [xn3],
+                     [yn3]])
+    coefs = np.linalg.solve(mat1,mat2)
+    
+    pnx = coefs[0,0]*px +coefs[0,1]*py +coefs[0,2]
+    pny = coefs[1,0]*px +coefs[1,1]*py +coefs[1,2]
+
+
+    return (pnx, pny))
 
 def change_to_reference_hexahedron(p, a, b, c, d, e, f):
 

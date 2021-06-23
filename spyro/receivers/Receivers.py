@@ -1,5 +1,5 @@
 from firedrake import *
-from FIAT.reference_element import UFCTriangle, UFCTetrahedron
+from FIAT.reference_element import UFCTriangle, UFCTetrahedron, UFCQuadrilateral
 from FIAT.kong_mulder_veldhuizen import KongMulderVeldhuizen as KMV
 from FIAT.lagrange import Lagrange as CG
 from FIAT.discontinuous_lagrange import DiscontinuousLagrange as DG
@@ -48,6 +48,7 @@ class Receivers:
         self.cell_tabulations = None
         self.cellNodeMaps = None
         self.nodes_per_cell = None
+        self.quadrilateral = (model["opts"]['quadrature']=='GLL')
         self.is_local = [0] * self.num_receivers
 
         self.build_maps()
@@ -347,6 +348,55 @@ class Receivers:
 
         return cell_tabulations
 
+    def __func_build_cell_tabulations_2D_quad(self):
+        element = choosing_element(self.space, self.degree)
+
+        cell_tabulations = np.zeros((self.num_receivers, self.nodes_per_cell))
+
+        for receiver_id in range(self.num_receivers):
+            cell_id = self.is_local[receiver_id]
+            if cell_id is not None:
+                # getting coordinates to change to reference element
+                p = self.receiver_locations[receiver_id]
+                v0 = self.cellVertices[receiver_id][0]
+                v1 = self.cellVertices[receiver_id][1]
+                v2 = self.cellVertices[receiver_id][2]
+                v3 = self.cellVertices[receiver_id][3]
+
+                p_reference = change_to_reference_quad(p, v0, v1, v2, v3)
+                initial_tab = element.tabulate(0, [p_reference])
+                phi_tab = initial_tab[(0, 0)]
+
+                cell_tabulations[receiver_id, :] = phi_tab.transpose()
+
+
+        return cell_tabulations
+    
+    def __func_build_cell_tabulations_3D_hex(self):
+        element = choosing_element(self.space, self.degree)
+
+        cell_tabulations = np.zeros((self.num_receivers, self.nodes_per_cell))
+
+        for receiver_id in range(self.num_receivers):
+            cell_id = self.is_local[receiver_id]
+            if cell_id is not None:
+                # getting coordinates to change to reference element
+                p = self.receiver_locations[receiver_id]
+                v0 = self.cellVertices[receiver_id][0]
+                v1 = self.cellVertices[receiver_id][1]
+                v2 = self.cellVertices[receiver_id][2]
+                v3 = self.cellVertices[receiver_id][3]
+                v4 = self.cellVertices[receiver_id][4]
+                v5 = self.cellVertices[receiver_id][5]
+
+                p_reference = change_to_reference_hexahedron(p, v0, v1, v2, v3, v4, v5)
+                initial_tab = element.tabulate(0, [p_reference])
+                phi_tab = initial_tab[(0, 0, 0)]
+
+                cell_tabulations[receiver_id, :] = phi_tab.transpose()
+
+        return cell_tabulations
+
 
 ## Some helper functions
 
@@ -355,7 +405,7 @@ def choosing_element(V, degree):
     cell_geometry = V.mesh().ufl_cell()
     if cell_geometry == quadrilateral:
         T = UFCQuadrilateral()
-        raise ValueError("Point interpolation not yet implemented for quads")
+        #raise ValueError("Point interpolation not yet implemented for quads")
 
     elif cell_geometry == triangle:
         T = UFCTriangle()
@@ -372,6 +422,8 @@ def choosing_element(V, degree):
         element = CG(T, degree)
     elif V.ufl_element().family() == "Discontinuous Lagrange":
         element = DG(T, degree)
+    elif V.ufl_element().family() == "Q":
+        element = CG(T, degree)
     else:
         raise ValueError("Function space not yet supported.")
 

@@ -177,6 +177,11 @@ class Receivers:
         cellNodeMaps = np.zeros((num_recv, nodes_per_cell))
         cellVertices = []
 
+        if self.quadrilateral == True:
+            end_vertex_indice = 4
+        else:
+            end_vertex_indice = 3
+
         for receiver_id in range(num_recv):
             cell_id = self.is_local[receiver_id]
 
@@ -185,7 +190,7 @@ class Receivers:
             if cell_id is not None:
                 cellId_maps[receiver_id] = cell_id
                 cellNodeMaps[receiver_id, :] = cell_node_map[cell_id, :]
-                for vertex_number in range(0, 3):
+                for vertex_number in range(0, end_vertex_indice):
                     cellVertices[receiver_id].append([])
                     z = node_locations[cell_node_map[cell_id, vertex_number], 0]
                     x = node_locations[cell_node_map[cell_id, vertex_number], 1]
@@ -750,36 +755,58 @@ def change_to_reference_quad(p, v0, v1, v2, v3):
     (x3, y3) = v3
 
     # Reference quad
-    xn0 = 0.0
-    yn0 = 0.0
-    xn1 = 1.0
-    yn1 = 0.0
-    xn2 = 1.0
-    yn2 = 1.0
-    xn3 = 0.0
-    yn3 = 1.0
+    # xn0 = 0.0
+    # yn0 = 0.0
+    # xn1 = 1.0
+    # yn1 = 0.0
+    # xn2 = 1.0
+    # yn2 = 1.0
+    # xn3 = 0.0
+    # yn3 = 1.0
 
-    mat1 = np.array([[x0,y0, 1, 0, 0, 0,-x0*xn0,-y0*xn0],
-                     [ 0, 0, 0,x0,y0, 1,-x0*yn0,-y0*yn0],
-                     [x1,y1, 1, 0, 0, 0,-x1*xn1,-y1*xn1],
-                     [ 0, 0, 0,x1,y1, 1,-x1*yn1,-y1*yn1],
-                     [x2,y2, 1, 0, 0, 0,-x2*xn2,-y2*xn2],
-                     [ 0, 0, 0,x2,y2, 1,-x2*yn2,-y2*yn2],
-                     [x3,y3, 1, 0, 0, 0,-x3*xn3,-y3*xn3],
-                     [ 0, 0, 0,x3,y3, 1,-x3*yn3,-y3*yn3]])
-    mat2 = np.array([[xn0],
-                     [yn0],
-                     [xn1],
-                     [yn1],
-                     [xn2],
-                     [yn2],
-                     [xn3],
-                     [yn3]])
-    coefs = np.linalg.solve(mat1,mat2)
-    
-    pnx = coefs[0,0]*px +coefs[0,1]*py +coefs[0,2]
-    pny = coefs[1,0]*px +coefs[1,1]*py +coefs[1,2]
+    dx1 = x1 - x2
+    dx2 = x3 - x2
+    dy1 = y1 - y2
+    dy2 = y3 - y2
+    sumx = x0 - x1 + x2 - x3
+    sumy = y0 - y1 + y2 - y3
 
+    gover = np.array([[sumx, dx2],
+                    [sumy, dy2]])
+
+    g_under= np.array([[dx1, dx2 ],
+                    [dy1, dy2 ]])
+
+    gunder = np.linalg.det(g_under)
+                    
+    hover = np.array([[dx1, sumx],
+                    [dy1, sumy]])
+
+    hunder= gunder
+
+    g = np.linalg.det(gover)/gunder
+    h = np.linalg.det(hover)/hunder
+    i = 1.0
+
+    a = x1 - x0 + g*x1
+    b = x3 - x0 + h*x3
+    c = x0
+    d = y1 - y0 + g*y1
+    e = y3 - y0 + h*y3
+    f = y0
+
+    A = e*i - f*h
+    B = c*h - b*i
+    C = b*f - c*e
+    D = f*g - d*i
+    E = a*i - c*g
+    F = c*d - a*f
+    G = d*h - e*g
+    H = b*g - a*h
+    I = a*e - b*d
+
+    pnx = (A*px + B*py + C)/(G*px + H*py + I)
+    pny = (D*px + E*py + F)/(G*px + H*py + I)
 
     return (pnx, pny)
 

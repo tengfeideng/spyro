@@ -92,7 +92,12 @@ lx = model['BCs']['lx']
 
 Real_Lz = Lz + lz
 Real_Lx = Lx + 2*lx
-mesh = fire.RectangleMesh(1000,1000,Real_Lz,Real_Lx, quadrilateral=quadrilateral)
+lbda = 1.429/5.0 
+num_elementsz= int(3.08*Real_Lz/(2*lbda))
+print(num_elementsz, flush=True)
+num_elementsx= int(3.08*Real_Lx/(2*lbda))
+print(num_elementsx, flush=True)
+mesh = fire.RectangleMesh(num_elementsz,num_elementsx,Real_Lz,Real_Lx, quadrilateral=quadrilateral)
 coordinates = copy.deepcopy(mesh.coordinates.dat.data)
 mesh.coordinates.dat.data[:,0]=-coordinates[:,0]
 

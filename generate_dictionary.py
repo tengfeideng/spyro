@@ -17,7 +17,7 @@ def generate_model(method, degree):
         "dimension": 2,  # dimension
     }
     model["parallelism"] = {
-        "type": "off",
+        "type": "spatial",
     }
     model["mesh"] = {
         "Lz": 40*lbda,  # depth in km - always positive

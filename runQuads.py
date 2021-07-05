@@ -73,7 +73,7 @@ def generate_mesh2D(model, comm):
     print('Finishing mesh generation', flush = True)
     return mesh
 
-method = 'KMV'
+method = 'spectral'
 if method == 'spectral':
     quadrilateral = True
 elif method == 'KMV':

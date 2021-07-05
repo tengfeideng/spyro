@@ -178,9 +178,12 @@ class Receivers:
         cellVertices = []
 
         if self.quadrilateral == True:
-            end_vertex_indice = 4
+            end_vertex_id = 4
+            degree = self.degree
+            cell_ends = [0, (degree+1)*(degree+1)-degree-1,  (degree+1)*(degree+1)-1, degree]
         else:
-            end_vertex_indice = 3
+            end_vertex_id = 3
+            cell_ends = [0, 1, 2]
 
         for receiver_id in range(num_recv):
             cell_id = self.is_local[receiver_id]
@@ -190,10 +193,10 @@ class Receivers:
             if cell_id is not None:
                 cellId_maps[receiver_id] = cell_id
                 cellNodeMaps[receiver_id, :] = cell_node_map[cell_id, :]
-                for vertex_number in range(0, end_vertex_indice):
+                for vertex_number in range(0, end_vertex_id):
                     cellVertices[receiver_id].append([])
-                    z = node_locations[cell_node_map[cell_id, vertex_number], 0]
-                    x = node_locations[cell_node_map[cell_id, vertex_number], 1]
+                    z = node_locations[cell_node_map[cell_id, cell_ends[vertex_number]], 0]
+                    x = node_locations[cell_node_map[cell_id, cell_ends[vertex_number]], 1]
                     cellVertices[receiver_id][vertex_number] = (z, x)
 
         return cellId_maps, cellVertices, cellNodeMaps

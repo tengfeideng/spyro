@@ -3,7 +3,7 @@
 #SBATCH --ntasks-per-node=40
 #SBATCH --partition=intel_large
 #SBATCH --time=2-23:00:00
-#SBATCH --job-name=test30and35coresNotMatFree
+#SBATCH --job-name=test15coreand20coreand25coreand30coreMatFreeKMV
 #SBATCH --output=%x.%j.out
 #SBATCH --error=%x.%j.err
 echo -e "\n## Job started at $(date +'%d-%m-%Y as %T') #####################\n"
@@ -54,8 +54,11 @@ export OMP_NUM_THREADS=1
 srun hostname > $HOSTFILE
 ## Information about the entry and exit of the job
 echo -e "\n## Diretorio de submissao do job:   $SLURM_SUBMIT_DIR \n"
-mpiexec -n 30 python run.py
-mpiexec -n 35 python run.py
+mpiexec -n 15 python ico_experiments.py
+mpiexec -n 20 python ico_experiments.py
+mpiexec -n 25  python ico_experiments.py
+mpiexec -n 30 python ico_experiments.py
+
 echo -e "\n## Job finished on $(date +'%d-%m-%Y as %T') ###################"
 rm $HOSTFILE
 

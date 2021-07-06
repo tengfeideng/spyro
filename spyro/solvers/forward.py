@@ -236,7 +236,7 @@ def forward(
     lhs_ = lhs(FF)
     rhs_ = rhs(FF)
 
-    A = assemble(lhs_, mat_type="matfree")
+    A = assemble(lhs_)#, mat_type="matfree")
     solver = LinearSolver(A, solver_parameters=params)
 
     usol = [Function(V, name="pressure") for t in range(nt) if t % fspool == 0]

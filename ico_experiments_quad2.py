@@ -128,7 +128,7 @@ def get_memory_usage():
     mem = process.memory_info()[0] / float(2 ** 20)
     return mem
 
-method = 'KMV'
+method = 'spectral'
 if method == 'spectral':
     quadrilateral = True
 elif method == 'KMV':

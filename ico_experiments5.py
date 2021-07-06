@@ -134,7 +134,7 @@ if method == 'spectral':
 elif method == 'KMV':
     quadrilateral = False
 
-degree = 2
+degree = 5
 output = False
 model = generate_model(method, degree)
 

@@ -134,7 +134,7 @@ if method == 'spectral':
 elif method == 'KMV':
     quadrilateral = False
 
-degree = 2
+degree = 4
 output = False
 model = generate_model(method, degree)
 
@@ -196,6 +196,6 @@ print(time.time() - t1, flush=True)
 if comm.ensemble_comm.rank == 0 and comm.comm.rank == 0:
     mem = get_memory_usage()
     print(mem, flush=True)
-
+    
 #spyro.plots.plot_shots(model, comm, p_r, vmin=-1e-3, vmax=1e-3, show = True)
 #spyro.io.save_shots(model, comm, p_r)

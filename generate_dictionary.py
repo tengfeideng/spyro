@@ -8,6 +8,8 @@ def generate_model(method, degree):
         method = 'CG'
         quadrature = 'GLL'
 
+    mesh_multiplication = 10.0
+
     lbda = 1.429/5.0
     model = {}
     model["opts"] = {
@@ -20,8 +22,8 @@ def generate_model(method, degree):
         "type": "spatial",
     }
     model["mesh"] = {
-        "Lz": 40*lbda,  # depth in km - always positive
-        "Lx": 30*lbda,  # width in km - always positive
+        "Lz": mesh_multiplication*40*lbda,  # depth in km - always positive
+        "Lx": mesh_multiplication*30*lbda,  # width in km - always positive
         "Ly": 0.0,  # thickness in km - always positive
     }
     model["BCs"] = {

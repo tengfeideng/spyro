@@ -228,7 +228,7 @@ def generate_mesh3D(model, comm):
 
 
 dimension = 2
-method = 'spectral'
+method = 'KMV'
 if method == 'spectral':
     quadrilateral = True
 elif method == 'KMV':

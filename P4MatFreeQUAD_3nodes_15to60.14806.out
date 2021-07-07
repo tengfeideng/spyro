@@ -1,0 +1,645 @@
+
+## Job started at 07-07-2021 as 12:52:09 #####################
+
+
+## Jobs activated by iamorim: 
+
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+             14807 intel_lar P5MatFre  iamorim PD       0:00      3 (QOSMaxNodePerUserLimit)
+             14806 intel_lar P4MatFre  iamorim  R       0:23      3 n[01-03]
+
+## Execution node:         n01 
+
+
+## Number of tasks per job: 60 
+
+
+## Diretorio de submissao do job:   /home/iamorim/BOLACHA/spyro 
+
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Reading mesh
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Setting up spectral element
+Finding sources and receivers
+Starting simulation
+Simulation time is:     0.1995 seconds
+Simulation time is:     0.3995 seconds
+Simulation time is:     0.5995 seconds
+Simulation time is:     0.7995 seconds
+Simulation time is:     0.9995 seconds
+Simulation time is:        1.2 seconds
+Simulation time is:      1.399 seconds
+Simulation time is:        1.6 seconds
+Simulation time is:        1.8 seconds
+Simulation time is:        2.0 seconds
+Simulation time is:        2.2 seconds
+Simulation time is:        2.4 seconds
+Simulation time is:      2.599 seconds
+Simulation time is:        2.8 seconds
+Simulation time is:        3.0 seconds
+Simulation time is:        3.2 seconds
+Simulation time is:        3.4 seconds
+Simulation time is:      3.599 seconds
+Simulation time is:        3.8 seconds
+Spatial parallelism, reducing to comm 0
+2153.916977405548
+2153.9173259735107
+2153.9170794487
+2153.9173591136932
+2153.917860507965
+2153.9173946380615
+2153.975682735443
+2153.966957092285
+2153.9211881160736
+2153.9750258922577
+2153.921361923218
+2153.9209814071655
+2153.9212503433228
+2153.9757220745087
+2153.911375761032
+8940.92578125
+Reading mesh
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Setting up spectral element
+Finding sources and receivers
+Starting simulation
+Simulation time is:     0.1995 seconds
+Simulation time is:     0.3995 seconds
+Simulation time is:     0.5995 seconds
+Simulation time is:     0.7995 seconds
+Simulation time is:     0.9995 seconds
+Simulation time is:        1.2 seconds
+Simulation time is:      1.399 seconds
+Simulation time is:        1.6 seconds
+Simulation time is:        1.8 seconds
+Simulation time is:        2.0 seconds
+Simulation time is:        2.2 seconds
+Simulation time is:        2.4 seconds
+Simulation time is:      2.599 seconds
+Simulation time is:        2.8 seconds
+Simulation time is:        3.0 seconds
+Simulation time is:        3.2 seconds
+Simulation time is:        3.4 seconds
+Simulation time is:      3.599 seconds
+Simulation time is:        3.8 seconds
+Spatial parallelism, reducing to comm 0
+1628.3266475200653
+1628.3276031017303
+1628.326894044876
+1628.3275542259216
+1628.327475309372
+1628.3266110420227
+1628.3286156654358
+1628.3279840946198
+1628.3234226703644
+1628.3282902240753
+1628.3278653621674
+1628.326654434204
+1628.3270797729492
+1628.3279106616974
+1628.328191280365
+1628.3278155326843
+1628.3273756504059
+1628.3274366855621
+1628.3271484375
+1628.3276023864746
+6744.234375
+Reading mesh
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Setting up spectral element
+Finding sources and receivers
+Starting simulation
+Simulation time is:     0.1995 seconds
+Simulation time is:     0.3995 seconds
+Simulation time is:     0.5995 seconds
+Simulation time is:     0.7995 seconds
+Simulation time is:     0.9995 seconds
+Simulation time is:        1.2 seconds
+Simulation time is:      1.399 seconds
+Simulation time is:        1.6 seconds
+Simulation time is:        1.8 seconds
+Simulation time is:        2.0 seconds
+Simulation time is:        2.2 seconds
+Simulation time is:        2.4 seconds
+Simulation time is:      2.599 seconds
+Simulation time is:        2.8 seconds
+Simulation time is:        3.0 seconds
+Simulation time is:        3.2 seconds
+Simulation time is:        3.4 seconds
+Simulation time is:      3.599 seconds
+Simulation time is:        3.8 seconds
+Spatial parallelism, reducing to comm 0
+1398.72869515419
+1398.7516913414001
+1398.7595431804657
+1398.7280702590942
+1398.75155377388
+1398.728585243225
+1398.7513029575348
+1398.7512595653534
+1398.7507193088531
+1398.7304759025574
+1398.7264804840088
+1398.7314622402191
+1398.7478442192078
+1398.741179227829
+1398.750022649765
+1398.7519707679749
+1398.72909450531
+1398.72820520401
+1398.7312784194946
+1398.74835896492
+5488.703125
+1398.7496764659882
+1398.7293603420258
+1398.7501420974731
+1398.7551102638245
+1398.7538516521454
+Reading mesh
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Setting up spectral element
+Finding sources and receivers
+Starting simulation
+Simulation time is:     0.1995 seconds
+Simulation time is:     0.3995 seconds
+Simulation time is:     0.5995 seconds
+Simulation time is:     0.7995 seconds
+Simulation time is:     0.9995 seconds
+Simulation time is:        1.2 seconds
+Simulation time is:      1.399 seconds
+Simulation time is:        1.6 seconds
+Simulation time is:        1.8 seconds
+Simulation time is:        2.0 seconds
+Simulation time is:        2.2 seconds
+Simulation time is:        2.4 seconds
+Simulation time is:      2.599 seconds
+Simulation time is:        2.8 seconds
+Simulation time is:        3.0 seconds
+Simulation time is:        3.2 seconds
+Simulation time is:        3.4 seconds
+Simulation time is:      3.599 seconds
+Simulation time is:        3.8 seconds
+Spatial parallelism, reducing to comm 0
+1166.9985480308533
+1166.9977991580963
+1166.997367143631
+1166.9973380565643
+1166.997671365738
+1166.997311592102
+1166.9980149269104
+1166.9983971118927
+1166.9863369464874
+1166.99826836586
+1167.0091354846954
+1166.9979503154755
+1166.9864983558655
+1166.9864768981934
+1167.0029363632202
+1166.9995210170746
+1166.9864196777344
+1166.9986238479614
+1166.9989409446716
+1167.0064632892609
+1166.9979112148285
+1166.9979786872864
+4599.671875
+1167.002774477005
+1167.0001332759857
+1167.0030410289764
+1167.0188629627228
+1167.003081560135
+1167.004989862442
+1167.0038158893585
+1167.003646850586
+Reading mesh
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Setting up spectral element
+Finding sources and receivers
+Starting simulation
+Simulation time is:     0.1995 seconds
+Simulation time is:     0.3995 seconds
+Simulation time is:     0.5995 seconds
+Simulation time is:     0.7995 seconds
+Simulation time is:     0.9995 seconds
+Simulation time is:        1.2 seconds
+Simulation time is:      1.399 seconds
+Simulation time is:        1.6 seconds
+Simulation time is:        1.8 seconds
+Simulation time is:        2.0 seconds
+Simulation time is:        2.2 seconds
+Simulation time is:        2.4 seconds
+Simulation time is:      2.599 seconds
+Simulation time is:        2.8 seconds
+Simulation time is:        3.0 seconds
+Simulation time is:        3.2 seconds
+Simulation time is:        3.4 seconds
+Simulation time is:      3.599 seconds
+Simulation time is:        3.8 seconds
+Spatial parallelism, reducing to comm 0
+1022.7223002910614
+1022.722202539444
+1022.7260329723358
+1022.7261333465576
+1022.725869178772
+1022.7274477481842
+1022.7253260612488
+1022.7164239883423
+1022.7234826087952
+1022.7251601219177
+1022.7232670783997
+1022.7197754383087
+1022.7187972068787
+1022.7256453037262
+1022.717714548111
+1022.7176792621613
+1022.7198157310486
+1022.7185547351837
+1022.7212808132172
+1022.7203209400177
+1022.7194485664368
+1022.7193548679352
+1022.7194049358368
+1022.7187206745148
+1022.7195572853088
+1022.7199010848999
+1022.720249414444
+1022.7188971042633
+1022.7196187973022
+1022.7181587219238
+1022.7236268520355
+3983.04296875
+1022.7269229888916
+1022.7263638973236
+1022.7269554138184
+1022.7263283729553
+Reading mesh
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Setting up spectral element
+Finding sources and receivers
+Starting simulation
+Simulation time is:     0.1995 seconds
+Simulation time is:     0.3995 seconds
+Simulation time is:     0.5995 seconds
+Simulation time is:     0.7995 seconds
+Simulation time is:     0.9995 seconds
+Simulation time is:        1.2 seconds
+Simulation time is:      1.399 seconds
+Simulation time is:        1.6 seconds
+Simulation time is:        1.8 seconds
+Simulation time is:        2.0 seconds
+Simulation time is:        2.2 seconds
+Simulation time is:        2.4 seconds
+Simulation time is:      2.599 seconds
+Simulation time is:        2.8 seconds
+Simulation time is:        3.0 seconds
+Simulation time is:        3.2 seconds
+Simulation time is:        3.4 seconds
+Simulation time is:      3.599 seconds
+Simulation time is:        3.8 seconds
+Spatial parallelism, reducing to comm 0
+863.6831781864166
+863.6813230514526
+863.6873199939728
+863.68164229393
+863.6870882511139
+863.68212723732
+863.6830043792725
+863.6837339401245
+863.682687997818
+863.6866631507874
+863.6829516887665
+863.6846742630005
+863.6832284927368
+863.6852250099182
+863.6831691265106
+863.6829311847687
+863.6828835010529
+863.6867029666901
+863.6829390525818
+863.6822195053101
+863.6822760105133
+863.6812224388123
+863.683310508728
+863.6824781894684
+863.683388710022
+863.6855316162109
+863.6761901378632
+863.6866297721863
+863.6829679012299
+863.6883931159973
+863.6831107139587
+863.6853201389313
+863.6930537223816
+863.6868710517883
+863.6842558383942
+863.6852459907532
+863.6922461986542
+863.6814064979553
+863.6841025352478
+863.6828875541687
+3509.6796875
+Entering mesh generation
+Reading mesh
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Setting up spectral element
+Finding sources and receivers
+Starting simulation
+Simulation time is:     0.1995 seconds
+Simulation time is:     0.3995 seconds
+Simulation time is:     0.5995 seconds
+Simulation time is:     0.7995 seconds
+Simulation time is:     0.9995 seconds
+Simulation time is:        1.2 seconds
+Simulation time is:      1.399 seconds
+Simulation time is:        1.6 seconds
+Simulation time is:        1.8 seconds
+Simulation time is:        2.0 seconds
+Simulation time is:        2.2 seconds
+Simulation time is:        2.4 seconds
+Simulation time is:      2.599 seconds
+Simulation time is:        2.8 seconds
+Simulation time is:        3.0 seconds
+Simulation time is:        3.2 seconds
+Simulation time is:        3.4 seconds
+Simulation time is:      3.599 seconds
+Simulation time is:        3.8 seconds
+Spatial parallelism, reducing to comm 0
+659.3258290290833
+659.3337500095367
+659.3341240882874
+659.3326041698456
+659.325920343399
+659.3329067230225
+659.3255250453949
+659.3257701396942
+659.3258831501007
+659.3333621025085
+659.3277230262756
+659.3246665000916
+659.3338072299957
+659.3332035541534
+659.3345198631287
+659.3261818885803
+659.330203294754
+659.3307914733887
+659.3257732391357
+659.327036857605
+659.3244853019714
+659.3287088871002
+659.3243501186371
+659.3285949230194
+659.3241450786591
+659.3260946273804
+659.3266005516052
+659.3241937160492
+659.3272371292114
+659.3259642124176
+659.327169418335
+659.3262453079224
+659.3307693004608
+659.3273797035217
+659.3262238502502
+659.3267691135406
+659.3274774551392
+659.3241028785706
+659.3309671878815
+659.3246397972107
+659.3303434848785
+659.3242816925049
+659.3313200473785
+659.3273913860321
+659.3244867324829
+659.3301949501038
+659.3268508911133
+659.3264076709747
+659.3302979469299
+659.3260753154755
+659.3243618011475
+659.3294060230255
+659.3347623348236
+2421.61328125
+659.3293099403381
+659.3345925807953
+659.329815864563
+659.3265011310577
+659.3271646499634
+659.3306012153625
+659.3290865421295
+
+## Job finished on 07-07-2021 as 15:23:58 ###################

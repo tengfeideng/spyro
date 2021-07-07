@@ -1,0 +1,500 @@
+
+## Job started at 07-07-2021 as 15:24:37 #####################
+
+
+## Jobs activated by iamorim: 
+
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+             14807 intel_lar P5MatFre  iamorim  R       0:24      3 n[01-03]
+
+## Execution node:         n01 
+
+
+## Number of tasks per job: 60 
+
+
+## Diretorio de submissao do job:   /home/iamorim/BOLACHA/spyro 
+
+Reading mesh
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Setting up spectral element
+Finding sources and receivers
+Starting simulation
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 201054 RUNNING AT n01
+=   EXIT CODE: 9
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+YOUR APPLICATION TERMINATED WITH THE EXIT STRING: Killed (signal 9)
+This typically refers to a problem with your application.
+Please see the FAQ page for debugging suggestions
+Reading mesh
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Setting up spectral element
+Finding sources and receivers
+Starting simulation
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 201583 RUNNING AT n01
+=   EXIT CODE: 9
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+YOUR APPLICATION TERMINATED WITH THE EXIT STRING: Killed (signal 9)
+This typically refers to a problem with your application.
+Please see the FAQ page for debugging suggestions
+Reading mesh
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Setting up spectral element
+Finding sources and receivers
+Starting simulation
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 201870 RUNNING AT n01
+=   EXIT CODE: 9
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+Reading mesh
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Setting up spectral element
+Finding sources and receivers
+Starting simulation
+Entering mesh generation
+Entering mesh generation
+Reading mesh
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Setting up spectral element
+Finding sources and receivers
+Starting simulation
+Simulation time is:     0.1995 seconds
+Simulation time is:     0.3995 seconds
+Simulation time is:     0.5995 seconds
+Simulation time is:     0.7995 seconds
+Simulation time is:     0.9995 seconds
+Simulation time is:        1.2 seconds
+Simulation time is:      1.399 seconds
+Simulation time is:        1.6 seconds
+Simulation time is:        1.8 seconds
+Simulation time is:        2.0 seconds
+Simulation time is:        2.2 seconds
+Simulation time is:        2.4 seconds
+Simulation time is:      2.599 seconds
+Simulation time is:        2.8 seconds
+Simulation time is:        3.0 seconds
+Simulation time is:        3.2 seconds
+Simulation time is:        3.4 seconds
+Simulation time is:      3.599 seconds
+Simulation time is:        3.8 seconds
+Spatial parallelism, reducing to comm 0
+1753.0508296489716
+1753.0375757217407
+1753.0469477176666
+1753.0474712848663
+1753.046553850174
+1753.038633108139
+1753.0457270145416
+1753.0468304157257
+1753.0466928482056
+1753.0472633838654
+1753.039380311966
+1753.0472540855408
+1753.0378999710083
+1753.0467927455902
+1753.046335697174
+1753.0461168289185
+1753.0468337535858
+1753.0437414646149
+1753.043705701828
+1753.0424194335938
+1753.04438996315
+1753.0472271442413
+1753.0474345684052
+1753.0543429851532
+1753.0554239749908
+1753.0444386005402
+1753.047485113144
+1753.0477261543274
+1753.0572276115417
+1753.044193983078
+1753.044186115265
+1753.0444536209106
+1753.0446183681488
+1753.0475754737854
+7900.2265625
+1753.0550210475922
+Reading mesh
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Setting up spectral element
+Finding sources and receivers
+Starting simulation
+Simulation time is:     0.1995 seconds
+Simulation time is:     0.3995 seconds
+Simulation time is:     0.5995 seconds
+Simulation time is:     0.7995 seconds
+Simulation time is:     0.9995 seconds
+Simulation time is:        1.2 seconds
+Simulation time is:      1.399 seconds
+Simulation time is:        1.6 seconds
+Simulation time is:        1.8 seconds
+Simulation time is:        2.0 seconds
+Simulation time is:        2.2 seconds
+Simulation time is:        2.4 seconds
+Simulation time is:      2.599 seconds
+Simulation time is:        2.8 seconds
+Simulation time is:        3.0 seconds
+Simulation time is:        3.2 seconds
+Simulation time is:        3.4 seconds
+Simulation time is:      3.599 seconds
+Simulation time is:        3.8 seconds
+Spatial parallelism, reducing to comm 0
+1410.3993110656738
+1410.3986196517944
+1410.4022617340088
+1410.4024720191956
+1410.3951694965363
+1410.3968391418457
+1410.3981175422668
+1410.4032516479492
+1410.4018204212189
+1410.4028339385986
+1410.4014558792114
+1410.403342962265
+1410.395988702774
+1410.3994765281677
+1410.3957755565643
+1410.4051523208618
+1410.3950307369232
+1410.4042608737946
+1410.396036863327
+1410.399117231369
+1410.4016692638397
+1410.3987293243408
+1410.3976769447327
+1410.3996477127075
+1410.3954441547394
+1410.3987390995026
+1410.4004881381989
+1410.4021983146667
+1410.3975400924683
+1410.403593301773
+1410.3953325748444
+1410.4031345844269
+1410.3978197574615
+1410.4038350582123
+1410.3954856395721
+1410.4039645195007
+1410.392816543579
+1410.3957884311676
+1410.3976745605469
+1410.39564204216
+6964.42578125
+Entering mesh generation
+Reading mesh
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Entering mesh generation
+Setting up spectral element
+Finding sources and receivers
+Starting simulation
+Simulation time is:     0.1995 seconds
+Simulation time is:     0.3995 seconds
+Simulation time is:     0.5995 seconds
+Simulation time is:     0.7995 seconds
+Simulation time is:     0.9995 seconds
+Simulation time is:        1.2 seconds
+Simulation time is:      1.399 seconds
+Simulation time is:        1.6 seconds
+Simulation time is:        1.8 seconds
+Simulation time is:        2.0 seconds
+Simulation time is:        2.2 seconds
+Simulation time is:        2.4 seconds
+Simulation time is:      2.599 seconds
+Simulation time is:        2.8 seconds
+Simulation time is:        3.0 seconds
+Simulation time is:        3.2 seconds
+Simulation time is:        3.4 seconds
+Simulation time is:      3.599 seconds
+Simulation time is:        3.8 seconds
+Spatial parallelism, reducing to comm 0
+1115.6630129814148
+1115.6680715084076
+1115.662190914154
+1115.6667029857635
+1115.6622858047485
+1115.6691632270813
+1115.6635785102844
+1115.6624298095703
+1115.662040233612
+1115.660168170929
+1115.6607592105865
+1115.6649692058563
+1115.6624450683594
+1115.662603378296
+1115.6656556129456
+1115.660359621048
+1115.6622595787048
+1115.6618430614471
+1115.6628155708313
+1115.6620383262634
+1115.6698327064514
+1115.6683895587921
+1115.662231683731
+1115.6703004837036
+1115.6673851013184
+1115.661102771759
+1115.669004201889
+1115.6682510375977
+1115.6617412567139
+1115.663185119629
+1115.6682398319244
+1115.6622338294983
+1115.6614072322845
+1115.6684591770172
+1115.6618583202362
+1115.6617925167084
+1115.6631886959076
+1115.6623122692108
+1115.6614513397217
+1115.6625654697418
+4722.22265625
+1115.662165403366
+1115.660667181015
+1115.6621804237366
+1115.6619334220886
+1115.6620757579803
+1115.6610674858093
+1115.6610021591187
+1115.6682159900665
+1115.667313337326
+1115.660901069641
+1115.6609013080597
+1115.6679162979126
+1115.6683449745178
+1115.6695606708527
+1115.6679899692535
+1115.6645996570587
+1115.6646111011505
+1115.6654994487762
+1115.664223909378
+1115.6716656684875
+
+## Job finished on 07-07-2021 as 16:50:12 ###################

@@ -1,0 +1,65 @@
+[proxy:0:1@n02.mintrop.usp.br] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:897): assert (!closed) failed
+[proxy:0:1@n02.mintrop.usp.br] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:1@n02.mintrop.usp.br] main (pm/pmiserv/pmip.c:169): demux engine error waiting for event
+srun: error: n02: task 1: Exited with exit code 7
+[mpiexec@n01.mintrop.usp.br] HYDT_bscu_wait_for_completion (tools/bootstrap/utils/bscu_wait.c:74): one of the processes terminated badly; aborting
+[mpiexec@n01.mintrop.usp.br] HYDT_bsci_wait_for_completion (tools/bootstrap/src/bsci_wait.c:21): launcher returned error waiting for completion
+[mpiexec@n01.mintrop.usp.br] HYD_pmci_wait_for_completion (pm/pmiserv/pmiserv_pmci.c:179): launcher returned error waiting for completion
+[mpiexec@n01.mintrop.usp.br] main (ui/mpich/mpiexec.c:326): process manager error waiting for completion
+Traceback (most recent call last):
+  File "/home/public/app/firedrake_gnu_042021/firedrake/src/PyOP2/pyop2/caching.py", line 197, in __new__
+    return cls._cache_lookup(key)
+  File "/home/public/app/firedrake_gnu_042021/firedrake/src/PyOP2/pyop2/caching.py", line 205, in _cache_lookup
+    return cls._cache[key]
+KeyError: (47837432023608, '10bba86f023d03bb4e9d19d20be91956', <class 'pyop2.base.Set'>, False, False, False, <class 'pyop2.base.Arg'>, <Access.INC: 4>, (<class 'pyop2.petsc_base.Mat'>, dtype('float64'), (((1, 1),),)), ((<class 'pyop2.base.Map'>, 36, None), (<class 'pyop2.base.Map'>, 36, None)), False, 0, 0, <class 'pyop2.base.Arg'>, <Access.READ: 1>, (<class 'pyop2.petsc_base.Dat'>, dtype('float64'), (<class 'pyop2.petsc_base.DataSet'>, (2,), (<class 'pyop2.base.Set'>,))), ((<class 'pyop2.base.Map'>, 4, None),), False, 1, <class 'pyop2.base.Arg'>, <Access.READ: 1>, (<class 'pyop2.petsc_base.Dat'>, dtype('float64'), (<class 'pyop2.petsc_base.DataSet'>, (1,), (<class 'pyop2.base.Set'>,))), ((<class 'pyop2.base.Map'>, 36, None),), False, 0, <class 'pyop2.base.Arg'>, <Access.READ: 1>, (<class 'pyop2.petsc_base.Dat'>, dtype('float64'), (<class 'pyop2.petsc_base.DataSet'>, (1,), (<class 'pyop2.base.Set'>,))), ((<class 'pyop2.base.Map'>, 36, None),), False, 0, <class 'pyop2.base.Arg'>, <Access.READ: 1>, (<class 'pyop2.petsc_base.Global'>, dtype('float64'), (1,)), None, False, <class 'pyop2.base.Arg'>, <Access.READ: 1>, (<class 'pyop2.petsc_base.Global'>, dtype('float64'), (1,)), None, False, <class 'pyop2.base.Arg'>, <Access.READ: 1>, (<class 'pyop2.petsc_base.Global'>, dtype('float64'), (1,)), None, False, None, <class 'pyop2.sequential.JITModule'>, 4)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/public/app/firedrake_gnu_042021/firedrake/src/PyOP2/pyop2/compilation.py", line 275, in get_so
+    return ctypes.CDLL(soname)
+  File "/opt/spack/opt/spack/linux-centos7-x86_64/gcc-8.3.0/python-3.6.8-silvpos6cd7qan3fvqvk2w5s42i7mlqe/lib/python3.6/ctypes/__init__.py", line 348, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: /home/iamorim/tmp_amd7/d9/ae9e9513bac6fcfabea7bd8a9d0fd1.so: cannot open shared object file: No such file or directory
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "ico_experiments_quad5.py", line 194, in <module>
+    p, p_r = spyro.solvers.forward(model, mesh, comm, vp, sources, wavelet, receivers, output = output)
+  File "/home/iamorim/BOLACHA/spyro/spyro/io/io.py", line 71, in wrapper
+    u, u_r = func(*args, **dict(kwargs, source_num=snum))
+  File "/home/iamorim/BOLACHA/spyro/spyro/solvers/forward.py", line 239, in forward
+    A = assemble(lhs_)#, mat_type="matfree")
+  File "/home/public/app/firedrake_gnu_042021/firedrake/src/firedrake/firedrake/adjoint/assembly.py", line 18, in wrapper
+    output = assemble(*args, **kwargs)
+  File "/home/public/app/firedrake_gnu_042021/firedrake/src/firedrake/firedrake/assemble.py", line 101, in assemble
+    m = l()
+  File "/home/public/app/firedrake_gnu_042021/firedrake/src/PyOP2/pyop2/base.py", line 3574, in compute
+    fun = self._jitmodule
+  File "/home/public/app/firedrake_gnu_042021/firedrake/src/PyOP2/pyop2/utils.py", line 62, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "/home/public/app/firedrake_gnu_042021/firedrake/src/PyOP2/pyop2/sequential.py", line 208, in _jitmodule
+    pass_layer_arg=self._pass_layer_arg)
+  File "/home/public/app/firedrake_gnu_042021/firedrake/src/PyOP2/pyop2/caching.py", line 199, in __new__
+    obj = make_obj()
+  File "/home/public/app/firedrake_gnu_042021/firedrake/src/PyOP2/pyop2/caching.py", line 189, in make_obj
+    obj.__init__(*args, **kwargs)
+  File "/home/public/app/firedrake_gnu_042021/firedrake/src/PyOP2/pyop2/sequential.py", line 101, in __init__
+    self.compile()
+  File "/home/public/app/firedrake_gnu_042021/firedrake/src/PyOP2/pyop2/sequential.py", line 160, in compile
+    comm=self.comm)
+  File "/home/public/app/firedrake_gnu_042021/firedrake/src/PyOP2/pyop2/compilation.py", line 489, in load
+    dll = compiler.get_so(code, extension)
+  File "/home/public/app/firedrake_gnu_042021/firedrake/src/PyOP2/pyop2/compilation.py", line 305, in get_so
+    stdout=log)
+  File "/opt/spack/opt/spack/linux-centos7-x86_64/gcc-8.3.0/python-3.6.8-silvpos6cd7qan3fvqvk2w5s42i7mlqe/lib/python3.6/subprocess.py", line 306, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "/opt/spack/opt/spack/linux-centos7-x86_64/gcc-8.3.0/python-3.6.8-silvpos6cd7qan3fvqvk2w5s42i7mlqe/lib/python3.6/subprocess.py", line 287, in call
+    with Popen(*popenargs, **kwargs) as p:
+  File "/opt/spack/opt/spack/linux-centos7-x86_64/gcc-8.3.0/python-3.6.8-silvpos6cd7qan3fvqvk2w5s42i7mlqe/lib/python3.6/subprocess.py", line 729, in __init__
+    restore_signals, start_new_session)
+  File "/opt/spack/opt/spack/linux-centos7-x86_64/gcc-8.3.0/python-3.6.8-silvpos6cd7qan3fvqvk2w5s42i7mlqe/lib/python3.6/subprocess.py", line 1295, in _execute_child
+    restore_signals, start_new_session, preexec_fn)
+OSError: [Errno 12] Cannot allocate memory
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0

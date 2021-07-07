@@ -1,0 +1,421 @@
+
+## Job started at 07-07-2021 as 02:06:32 #####################
+
+
+## Jobs activated by iamorim: 
+
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+             14798 intel_lar P4MatFre  iamorim PD       0:00      3 (QOSMaxNodePerUserLimit)
+             14799 intel_lar P5MatFre  iamorim PD       0:00      3 (QOSMaxNodePerUserLimit)
+             14797 intel_lar P3MatFre  iamorim  R       0:23      3 n[08-10]
+
+## Execution node:         n08 
+
+
+## Number of tasks per job: 60 
+
+
+## Diretorio de submissao do job:   /home/iamorim/BOLACHA/spyro 
+
+Reading mesh
+Setting up KMV element
+Finding sources and receivers
+Starting simulation
+Simulation time is:     0.1995 seconds
+Simulation time is:     0.3995 seconds
+Simulation time is:     0.5995 seconds
+Simulation time is:     0.7995 seconds
+Simulation time is:     0.9995 seconds
+Simulation time is:        1.2 seconds
+Simulation time is:      1.399 seconds
+Simulation time is:        1.6 seconds
+Simulation time is:        1.8 seconds
+Simulation time is:        2.0 seconds
+Simulation time is:        2.2 seconds
+Simulation time is:        2.4 seconds
+Simulation time is:      2.599 seconds
+Simulation time is:        2.8 seconds
+Simulation time is:        3.0 seconds
+Simulation time is:        3.2 seconds
+Simulation time is:        3.4 seconds
+Simulation time is:      3.599 seconds
+Simulation time is:        3.8 seconds
+Spatial parallelism, reducing to comm 0
+2572.703507900238
+2572.68484044075
+2572.693837404251
+2572.690263748169
+2572.5902688503265
+2572.5847957134247
+2572.593777656555
+2572.696744441986
+2572.6829686164856
+2572.678207397461
+2572.6794476509094
+2572.6899795532227
+2572.6977910995483
+2572.671950340271
+2572.573177099228
+3731.83984375
+Reading mesh
+Setting up KMV element
+Finding sources and receivers
+Starting simulation
+Simulation time is:     0.1995 seconds
+Simulation time is:     0.3995 seconds
+Simulation time is:     0.5995 seconds
+Simulation time is:     0.7995 seconds
+Simulation time is:     0.9995 seconds
+Simulation time is:        1.2 seconds
+Simulation time is:      1.399 seconds
+Simulation time is:        1.6 seconds
+Simulation time is:        1.8 seconds
+Simulation time is:        2.0 seconds
+Simulation time is:        2.2 seconds
+Simulation time is:        2.4 seconds
+Simulation time is:      2.599 seconds
+Simulation time is:        2.8 seconds
+Simulation time is:        3.0 seconds
+Simulation time is:        3.2 seconds
+Simulation time is:        3.4 seconds
+Simulation time is:      3.599 seconds
+Simulation time is:        3.8 seconds
+Spatial parallelism, reducing to comm 0
+1945.8868327140808
+1945.8925166130066
+1945.8901298046112
+1945.8756320476532
+1945.8873927593231
+1945.8803734779358
+1945.8917846679688
+1945.8872730731964
+1945.8915984630585
+1945.8852701187134
+1945.8735303878784
+1945.8761203289032
+1945.8761849403381
+1945.8730368614197
+1945.8906140327454
+1945.8750863075256
+1945.885957479477
+1945.8845508098602
+1945.8857777118683
+1945.8786981105804
+2909.984375
+Reading mesh
+Setting up KMV element
+Finding sources and receivers
+Starting simulation
+Simulation time is:     0.1995 seconds
+Simulation time is:     0.3995 seconds
+Simulation time is:     0.5995 seconds
+Simulation time is:     0.7995 seconds
+Simulation time is:     0.9995 seconds
+Simulation time is:        1.2 seconds
+Simulation time is:      1.399 seconds
+Simulation time is:        1.6 seconds
+Simulation time is:        1.8 seconds
+Simulation time is:        2.0 seconds
+Simulation time is:        2.2 seconds
+Simulation time is:        2.4 seconds
+Simulation time is:      2.599 seconds
+Simulation time is:        2.8 seconds
+Simulation time is:        3.0 seconds
+Simulation time is:        3.2 seconds
+Simulation time is:        3.4 seconds
+Simulation time is:      3.599 seconds
+Simulation time is:        3.8 seconds
+Spatial parallelism, reducing to comm 0
+1606.8459494113922
+1606.8814573287964
+1606.8802652359009
+1606.8461165428162
+1606.9719922542572
+1606.8864631652832
+1606.9719789028168
+1606.8865089416504
+1606.94326877594
+1606.879852771759
+1606.9725587368011
+1606.8755037784576
+1606.8746168613434
+1606.8854205608368
+1606.8422389030457
+1606.8784079551697
+1606.8848383426666
+1606.8485260009766
+1606.8825426101685
+1606.8812143802643
+2369.26171875
+1606.8956634998322
+1606.8936262130737
+1606.889713048935
+1606.9790415763855
+1606.897267818451
+Reading mesh
+Setting up KMV element
+Finding sources and receivers
+Starting simulation
+Simulation time is:     0.1995 seconds
+Simulation time is:     0.3995 seconds
+Simulation time is:     0.5995 seconds
+Simulation time is:     0.7995 seconds
+Simulation time is:     0.9995 seconds
+Simulation time is:        1.2 seconds
+Simulation time is:      1.399 seconds
+Simulation time is:        1.6 seconds
+Simulation time is:        1.8 seconds
+Simulation time is:        2.0 seconds
+Simulation time is:        2.2 seconds
+Simulation time is:        2.4 seconds
+Simulation time is:      2.599 seconds
+Simulation time is:        2.8 seconds
+Simulation time is:        3.0 seconds
+Simulation time is:        3.2 seconds
+Simulation time is:        3.4 seconds
+Simulation time is:      3.599 seconds
+Simulation time is:        3.8 seconds
+Spatial parallelism, reducing to comm 0
+1314.5697762966156
+1314.580822467804
+1314.5687565803528
+1314.57066655159
+1314.5701858997345
+1314.5738022327423
+1314.5040459632874
+1314.5050899982452
+1314.5087895393372
+1314.502620458603
+1314.5057106018066
+1314.505972623825
+1314.5088555812836
+1314.504186630249
+1314.508626461029
+1314.501454114914
+1314.5078766345978
+1314.493495464325
+1314.5138187408447
+1314.5094974040985
+1314.5075874328613
+1314.5064849853516
+2022.046875
+1314.5055072307587
+1314.5137739181519
+1314.509630203247
+1314.5150570869446
+1314.5775680541992
+1314.5757911205292
+1314.5734453201294
+1314.5792362689972
+Reading mesh
+Setting up KMV element
+Finding sources and receivers
+Starting simulation
+Simulation time is:     0.1995 seconds
+Simulation time is:     0.3995 seconds
+Simulation time is:     0.5995 seconds
+Simulation time is:     0.7995 seconds
+Simulation time is:     0.9995 seconds
+Simulation time is:        1.2 seconds
+Simulation time is:      1.399 seconds
+Simulation time is:        1.6 seconds
+Simulation time is:        1.8 seconds
+Simulation time is:        2.0 seconds
+Simulation time is:        2.2 seconds
+Simulation time is:        2.4 seconds
+Simulation time is:      2.599 seconds
+Simulation time is:        2.8 seconds
+Simulation time is:        3.0 seconds
+Simulation time is:        3.2 seconds
+Simulation time is:        3.4 seconds
+Simulation time is:      3.599 seconds
+Simulation time is:        3.8 seconds
+Spatial parallelism, reducing to comm 0
+1169.0672376155853
+1168.9957866668701
+1169.065933227539
+1168.9735443592072
+1169.0633668899536
+1168.98167014122
+1169.0722925662994
+1168.9800033569336
+1169.0472824573517
+1169.005467414856
+1169.0517101287842
+1168.9922142028809
+1169.0684373378754
+1168.9934780597687
+1169.0551362037659
+1168.9696536064148
+1168.9791033267975
+1168.9818370342255
+1169.0380733013153
+1169.0089492797852
+1169.0045070648193
+1169.011373758316
+1168.993264913559
+1169.030070066452
+1168.995843410492
+1169.0072515010834
+1169.0035426616669
+1169.0061221122742
+1169.0519833564758
+1168.9939901828766
+1169.0737006664276
+1763.1015625
+1169.0455813407898
+1169.0234036445618
+1168.984813451767
+1169.0756680965424
+Reading mesh
+Setting up KMV element
+Finding sources and receivers
+Starting simulation
+Simulation time is:     0.1995 seconds
+Simulation time is:     0.3995 seconds
+Simulation time is:     0.5995 seconds
+Simulation time is:     0.7995 seconds
+Simulation time is:     0.9995 seconds
+Simulation time is:        1.2 seconds
+Simulation time is:      1.399 seconds
+Simulation time is:        1.6 seconds
+Simulation time is:        1.8 seconds
+Simulation time is:        2.0 seconds
+Simulation time is:        2.2 seconds
+Simulation time is:        2.4 seconds
+Simulation time is:      2.599 seconds
+Simulation time is:        2.8 seconds
+Simulation time is:        3.0 seconds
+Simulation time is:        3.2 seconds
+Simulation time is:        3.4 seconds
+Simulation time is:      3.599 seconds
+Simulation time is:        3.8 seconds
+Spatial parallelism, reducing to comm 0
+1026.3723196983337
+1026.357889175415
+1026.3674535751343
+1026.365971326828
+1026.3246619701385
+1026.3705823421478
+1026.3313274383545
+1026.329672574997
+1026.3774225711823
+1026.3531424999237
+1026.365837097168
+1026.3604469299316
+1026.3649916648865
+1026.3715569972992
+1026.3250069618225
+1026.3707675933838
+1026.3233814239502
+1026.3315289020538
+1026.3300638198853
+1026.3306949138641
+1026.3663620948792
+1026.3731217384338
+1026.3653399944305
+1026.3760681152344
+1026.3262388706207
+1026.363373041153
+1026.3633205890656
+1026.3566720485687
+1026.3539752960205
+1026.377108335495
+1026.3606741428375
+1026.3726315498352
+1567.796875
+1026.357178926468
+1026.3650243282318
+1026.3696007728577
+1026.3700478076935
+1026.3651566505432
+1026.3657553195953
+1026.3665623664856
+1026.3685381412506
+Reading mesh
+Setting up KMV element
+Finding sources and receivers
+Starting simulation
+Simulation time is:     0.1995 seconds
+Simulation time is:     0.3995 seconds
+Simulation time is:     0.5995 seconds
+Simulation time is:     0.7995 seconds
+Simulation time is:     0.9995 seconds
+Simulation time is:        1.2 seconds
+Simulation time is:      1.399 seconds
+Simulation time is:        1.6 seconds
+Simulation time is:        1.8 seconds
+Simulation time is:        2.0 seconds
+Simulation time is:        2.2 seconds
+Simulation time is:        2.4 seconds
+Simulation time is:      2.599 seconds
+Simulation time is:        2.8 seconds
+Simulation time is:        3.0 seconds
+Simulation time is:        3.2 seconds
+Simulation time is:        3.4 seconds
+Simulation time is:      3.599 seconds
+Simulation time is:        3.8 seconds
+Spatial parallelism, reducing to comm 0
+721.916698217392
+721.9198801517487
+721.860862493515
+721.8508303165436
+721.8537087440491
+721.877400636673
+721.877117395401
+721.9042840003967
+721.8658254146576
+721.8559927940369
+721.8635430335999
+721.8665421009064
+721.8697576522827
+721.9124269485474
+721.8491377830505
+721.8812186717987
+721.878210067749
+721.9243574142456
+721.8545875549316
+721.9140386581421
+721.8686556816101
+721.8673837184906
+721.8631684780121
+721.8724145889282
+721.8721768856049
+721.859879732132
+721.8633830547333
+721.8653521537781
+721.8723521232605
+721.8723793029785
+721.8727548122406
+721.8937253952026
+721.863897562027
+721.8730583190918
+721.8717439174652
+721.8744304180145
+1116.22265625
+721.8650572299957
+721.8823549747467
+721.9146902561188
+721.8526408672333
+721.8780307769775
+721.8745317459106
+721.8744721412659
+721.8572037220001
+721.9131138324738
+721.8835198879242
+721.8816990852356
+721.8646464347839
+721.8800299167633
+721.8800208568573
+721.8807911872864
+721.8853979110718
+721.8837711811066
+721.8807306289673
+721.876181602478
+721.876874923706
+721.8800511360168
+721.8734083175659
+721.8738520145416
+721.8896336555481
+
+## Job finished on 07-07-2021 as 05:05:35 ###################

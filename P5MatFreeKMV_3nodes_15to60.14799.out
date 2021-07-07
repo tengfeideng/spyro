@@ -1,0 +1,65 @@
+
+## Job started at 07-07-2021 as 07:22:39 #####################
+
+
+## Jobs activated by iamorim: 
+
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+             14799 intel_lar P5MatFre  iamorim  R       0:22      3 n[01-03]
+
+## Execution node:         n01 
+
+
+## Number of tasks per job: 60 
+
+
+## Diretorio de submissao do job:   /home/iamorim/BOLACHA/spyro 
+
+Reading mesh
+Setting up KMV element
+Finding sources and receivers
+Starting simulation
+Simulation time is:     0.1995 seconds
+Simulation time is:     0.3995 seconds
+Simulation time is:     0.5995 seconds
+Simulation time is:     0.7995 seconds
+Simulation time is:     0.9995 seconds
+Simulation time is:        1.2 seconds
+Simulation time is:      1.399 seconds
+Simulation time is:        1.6 seconds
+Simulation time is:        1.8 seconds
+Simulation time is:        2.0 seconds
+Simulation time is:        2.2 seconds
+Simulation time is:        2.4 seconds
+Simulation time is:      2.599 seconds
+Simulation time is:        2.8 seconds
+Simulation time is:        3.0 seconds
+Simulation time is:        3.2 seconds
+Simulation time is:        3.4 seconds
+Simulation time is:      3.599 seconds
+Simulation time is:        3.8 seconds
+Spatial parallelism, reducing to comm 0
+2926.7414724826813
+2926.8162517547607
+2926.675602912903
+2926.2791125774384
+2926.7006883621216
+2926.6289842128754
+2926.57630777359
+2926.824256181717
+2926.8695225715637
+2926.9542891979218
+2926.951635837555
+2926.820143222809
+2926.8412375450134
+2926.643452644348
+2926.5491433143616
+6759.61328125
+Reading mesh
+Setting up KMV element
+Finding sources and receivers
+Starting simulation
+Simulation time is:     0.1995 seconds
+Simulation time is:     0.3995 seconds
+Simulation time is:     0.5995 seconds
+Simulation time is:     0.7995 seconds

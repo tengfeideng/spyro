@@ -1,5 +1,5 @@
 import firedrake as fire
-from firedrake import dx, inner, grad, div
+from firedrake import dx, inner, grad, div, sin
 from firedrake.assemble import create_assembly_callable
 import numpy as np
 from spyro.solvers import helpers
@@ -11,7 +11,7 @@ degree = 2
 mesh = fire.UnitSquareMesh(nx,nx)
 c = fire.Constant(1.0)
 params = {"ksp_type": "cg", "pc_type": "jacobi"}
-dt = 0.001
+dt = 0.0001
 final_time = 1.0
 frequency = 5.0
 nspool = 100
@@ -24,6 +24,9 @@ output = True
 VecFS = fire.VectorFunctionSpace(mesh,"CG", degree)
 ScaFS = fire.FunctionSpace(mesh, "CG", degree)
 V = VecFS * ScaFS
+
+bc0 = fire.DirichletBC(V.sub(0), fire.as_vector([0.0, 0.0]), "on_boundary")
+bc1 = fire.DirichletBC(V.sub(1), 0.0, "on_boundary")
 
 ## Creating sources
 model = {}
@@ -67,7 +70,7 @@ LHS = (1/c**2) * dpdt_trial * q * dx + inner(dudt_trial, q_vec) * dx
 RHS = inner(u, grad(q)) * dx + p * div(q_vec) * dx 
 
 ## Assembling matrices
-A = fire.assemble(LHS)
+A = fire.assemble(LHS, bcs = [bc0,bc1])
 B = fire.Function(V)
 assembly_callable = create_assembly_callable(RHS, tensor=B)
 solv = fire.LinearSolver(A, solver_parameters=params)
@@ -75,9 +78,6 @@ solv = fire.LinearSolver(A, solver_parameters=params)
 ## Integrating in time
 nt = int(final_time/ dt)  # number of timesteps
 dUP = fire.Function(V)
-K1  = fire.Function(V)
-K2  = fire.Function(V)
-K3  = fire.Function(V)
 rhs_forcing = fire.Function(ScaFS)
 
 for step in range(nt):
@@ -91,34 +91,10 @@ for step in range(nt):
     B0 += f
 
     solv.solve(dUP, B)  # Solve for du and dp
-    K1.assign(dUP)
-    k1U, k1P = K1.split()
+    du, dp = dUP.split()
 
-    # Second step
-    u.assign(u0 + dt * k1U)
-    p.assign(p0 + dt * k1P)
-    assembly_callable()
-    f = sources.apply_source(rhs_forcing, wavelet[step+1])
-    B0 = B.sub(1)
-    B0 += f
-
-    solv.solve(dUP, B)  # Solve for du and dp
-    K2.assign(dUP)
-    k2U, k2P = K2.split()
-
-    # Third step
-    u.assign(0.75 * u0 + 0.25 * (u + dt * k2U))
-    p.assign(0.75 * p0 + 0.25 * (p + dt * k2P))
-    assembly_callable()
-
-
-    solv.solve(dUP, B)  # Solve for du and dp
-    K3.assign(dUP)
-    k3U, k3P = K3.split()
-
-    # Updating answer
-    u.assign((1.0 / 3.0) * u0 + (2.0 / 3.0) * (u + dt * k3U))
-    p.assign((1.0 / 3.0) * p0 + (2.0 / 3.0) * (p + dt * k3P))
+    u.assign(u0 + dt * du)
+    p.assign(p0 + dt * dp)
 
     u0.assign(u)
     p0.assign(p)
